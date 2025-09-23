@@ -39,6 +39,16 @@ class PegawaiController extends Controller
             'future_goal' => 'Menjadi Full Stack Developer yang handal',
         ];
 
-        return $data;
+        // Meneruskan data ke view 'pegawai'
+        return view('pegawai', $data);
+    }
+
+    public function show(string $param1)
+    {
+        if($param1 == 'detail'){
+            return view('halaman-mahasiswa-detail');
+        } else if ($param1 == 'profil'){
+            return view('halaman-mahasiswa-profil');
+        }
     }
 }
